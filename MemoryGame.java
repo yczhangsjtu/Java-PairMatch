@@ -3,7 +3,6 @@ import javax.imageio.*;
 import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.*;
 import java.awt.image.*;
 import java.util.Random;
 import java.util.ArrayList;
@@ -11,7 +10,11 @@ import java.util.Collections;
 
 public class MemoryGame extends JFrame implements ActionListener
 {
-    JButton[][] buttons = new JButton[8][8];
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JButton[][] buttons = new JButton[8][8];
     JButton start = new JButton("START");
 	int tmpI1 = -1, tmpJ1 = -1;
 	int tmpI2 = -1, tmpJ2 = -1;
@@ -39,9 +42,7 @@ public class MemoryGame extends JFrame implements ActionListener
         clock.setRepeats(true);
 		recov.setInitialDelay(1000);
 		recov.setRepeats(false);
-		int vanished = 0;
-
-        for (int i = 0; i < 8; i++)
+		for (int i = 0; i < 8; i++)
             for (int j = 0; j < 8; j++)
             {
                 buttons[i][j] = new JButton("");
@@ -173,7 +174,11 @@ public class MemoryGame extends JFrame implements ActionListener
 
 class GridPanel extends JPanel
 {
-    int[][] nums = new int[8][8];
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	int[][] nums = new int[8][8];
     boolean[][] v = new boolean[8][8];
     BufferedImage[] bi = new BufferedImage[32];
 	
